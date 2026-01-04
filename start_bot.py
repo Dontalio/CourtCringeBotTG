@@ -10,15 +10,6 @@ from FSM_dir.all_fsm import fsm_router
 Для запуска бота, его основного цикла с полингом. ПОдключение всего остального
 '''
 
-# court_bot = Bot(token=config('TOKEN'),
-#                 default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-# logging.basicConfig(level=logging.INFO,
-#                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-# admins = [int(admin_id) for admin_id in config('ADMINS').split(',')]
-# logger = logging.getLogger(__name__)
-# dp = Dispatcher(storage=MemoryStorage())
-# scheduler = AsyncIOScheduler(timezone='Europe/Moscow')
-
 
 def include_routers():
     '''подключение всех роутеров'''

@@ -7,37 +7,17 @@ def reg_name_jb(call : CallbackQuery | Message):
     kb_list = [[KeyboardButton(text= f'{first_name}')]]
     return ReplyKeyboardMarkup(keyboard=kb_list,
                                resize_keyboard=True,
-                               input_field_placeholder='Или отправьте напишите своё имя в чате...'
+                               input_field_placeholder='Или отправьте напишите своё имя в чате...',
+                               one_time_keyboard= True
                                )
 
 def reg_adult_kb(call : CallbackQuery | Message):
     kb_list = [[KeyboardButton(text=f'Мужской 🙎‍♂️')], [KeyboardButton(text=f'Женский 🙎‍♀️')]]
     return ReplyKeyboardMarkup(keyboard=kb_list,
                                resize_keyboard=True,
-                               input_field_placeholder='Выберите пол'
+                               input_field_placeholder='Выберите пол',
+                               one_time_keyboard= True
                                )
-def main_kb(user_telegram_id: int):
-    kb_list = [
-        [KeyboardButton(text="❤️ Создать подкат"), KeyboardButton(text="👤 Профиль")]
-    ]
-    if user_telegram_id in admins: # при создании клавы для юзера - проверяем кто он.
-        kb_list.append([KeyboardButton(text="⚙️ Админ панель")])
-    keyboard = ReplyKeyboardMarkup(keyboard=kb_list,
-                                   resize_keyboard=True,
-                                   one_time_keyboard=True,
-                                   input_field_placeholder='Основное меню бота...')
-    return keyboard # вернём готовую сгенерированную клавиатуру
-
-def jokes_menu():
-    kb_list = [
-        [KeyboardButton(text="❤️ Повторить подкат")],
-        [KeyboardButton(text="📄 Назад в меню")]
-    ]
-    keyboard = ReplyKeyboardMarkup(keyboard=kb_list,
-                                   resize_keyboard=True,
-                                   one_time_keyboard=True,
-                                   input_field_placeholder='I so love u')
-    return keyboard  # вернём готовую сгенерированную клавиатуру
 
 def get_spec_info():
     kb_list = [
